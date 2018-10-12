@@ -20,4 +20,4 @@ class TestClass(object):
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    pytest.main(['-k test_'])
+    pytest.main(['-k test_', '-s'])
