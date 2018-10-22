@@ -24,4 +24,4 @@ if __name__ == "__main__":
     logzero.setup_logger('')
     
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    pytest.main(['-k test_', '-s'])
+    pytest.main([__file__, '-k test_', '-s'])
