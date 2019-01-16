@@ -11,6 +11,10 @@ import os
 import kanilog
 import pytest
 import stdlogging
+from add_parent_path import add_parent_path
+
+with add_parent_path():
+    pass
 
 
 def setup_module(module):
