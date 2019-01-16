@@ -5,23 +5,37 @@
 # Copyright © %YEAR% %USER% <%MAIL%>
 #
 
+import logging
 import os
-import pytest
-import logzero
 
-class TestClass(object):
-    def setup_method(self):
-        pass
-    
-    def teardown_method(self):
-        pass
-        
-    def test_(self):
-        pass
+import kanilog
+import pytest
+import stdlogging
+
+
+def setup_module(module):
+    pass
+
+
+def teardown_module(module):
+    pass
+
+
+def setup_function(function):
+    pass
+
+
+def teardown_function(function):
+    pass
+
+
+def test_func():
+    pass
+
 
 if __name__ == "__main__":
-    logzero.__name__ = ''
-    logzero.setup_logger('')
-    
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    kanilog.setup_logger(logfile='/tmp/%s.log' % (os.path.basename(__file__)), level=logging.INFO)
+    stdlogging.enable()
+
     pytest.main([__file__, '-k test_', '-s'])
